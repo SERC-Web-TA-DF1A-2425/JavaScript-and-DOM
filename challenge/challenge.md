@@ -1,5 +1,27 @@
 # Challenge Exercise - Quiz Application
 
+## What this challenge covers
+
+This challenge brings together the DOM and event-handling skills from the previous exercises to build a small interactive application from scratch. You will:
+
+- **Create HTML** elements to display questions and answer choices.
+- **Apply CSS classes dynamically** to give visual feedback (correct vs. wrong).
+- **Use event listeners** to respond to user interactions.
+- **Manage state** (e.g. the current question, the score) entirely in JavaScript.
+
+### Key concepts you will practice
+
+| Concept | How it's used in this challenge |
+|---------|--------------------------------|
+| `querySelectorAll` + `forEach` | Attach click listeners to every answer button |
+| `classList.add` / `classList.remove` | Highlight the selected answer as correct or wrong |
+| `element.className` | Reset all classes before applying the new result |
+| Conditional logic (`if/else`) | Check whether the chosen answer is correct |
+
+> **Tip:** Start with a single question to get the logic working, then refactor to support multiple questions.
+
+---
+
 ## Task
 
 Create a simple quiz application where users can select an answer to a series of questions. Based on the selected answer, display whether the answer is correct or wrong by changing the class of an element.

@@ -1,6 +1,42 @@
 # Exercise 1 - DOM Manipulation
 
-Series of exercises to practice DOM manipulation.
+## What is the DOM?
+
+The **Document Object Model (DOM)** is a programming interface that represents an HTML page as a tree of objects. When a browser loads an HTML page, it parses the markup and creates a live in-memory tree where every element, attribute, and piece of text becomes a **node** that JavaScript can read and modify.
+
+```
+document
+└── <html>
+    ├── <head>
+    │   └── <title>
+    └── <body>
+        ├── <h1 id="header">
+        ├── <p class="item">
+        └── ...
+```
+
+**Why does this matter?**  
+Because JavaScript can use the DOM to:
+- **Select** any element on the page.
+- **Read or change** its content, attributes, and styles.
+- **Create** new elements and insert them into the page.
+- **Remove** elements that are no longer needed.
+
+All of this happens *without* reloading the page, which is what makes modern web applications feel fast and interactive.
+
+### Key DOM selection methods
+
+| Method | Returns | Selects by |
+|--------|---------|-----------|
+| `document.getElementById(id)` | Single element | `id` attribute |
+| `document.getElementsByClassName(name)` | HTMLCollection | `class` attribute |
+| `document.getElementsByTagName(tag)` | HTMLCollection | tag name |
+| `document.querySelector(selector)` | First match | any CSS selector |
+| `document.querySelectorAll(selector)` | NodeList | any CSS selector |
+
+> **Note:** `HTMLCollection` and `NodeList` are array-like objects. Use a `for...of` loop or `.forEach()` to iterate over them.
+
+---
 
 ## Setup
 

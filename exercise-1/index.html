@@ -4,27 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM Manipulation Exercises</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 20px auto; padding: 0 20px; }
+        section { border: 1px solid #ccc; border-radius: 6px; padding: 16px; margin-bottom: 24px; }
+        section h2 { margin-top: 0; }
+        .explanation { background: #f0f4ff; border-left: 4px solid #4a6cf7; padding: 10px 14px; margin-bottom: 12px; border-radius: 0 4px 4px 0; }
+        #box { width: 50px; height: 50px; background: lightgray; display: inline-block; }
+    </style>
 </head>
 <body>
-    <h1 id="header">Header</h1>
-    <p class="item">Item 1</p>
-    <p class="item">Item 2</p>
-    <p class="item">Item 3</p>
-    <p class="highlight">Highlight 1</p>
-    <p class="highlight">Highlight 2</p>
-    <aside class="container">
-        <p>Container 1</p>
-        <p>Container 2</p>
-        <p>Container 3</p>
-    </aside>
-    <div id="content">Content</div>
-    <a id="link" href="#">Link</a>
-    <div id="box">Box</div>
-    <div id="myElement">My Element</div>
-    <button id="myButton">Click Me</button>
-    <div id="message">Message</div>
-    <button id="toggleButton">Toggle Visibility</button>
-    <div id="toggleElement">Toggle Element</div>
+    <h1>Exercise 1 – DOM Manipulation</h1>
+    <p>Open <code>script.js</code> in your editor and follow the instructions in each section below. Reload the page to see your changes take effect.</p>
+
+    <!-- Exercise 1: Selecting Elements -->
+    <section>
+        <h2>Exercise 1: Selecting Elements</h2>
+
+        <div class="explanation">
+            <strong>Select by ID</strong> – Use <code>document.getElementById('header')</code> to select the heading below and change its <code>style.backgroundColor</code> to <code>'blue'</code>.
+        </div>
+        <h2 id="header">Header</h2>
+
+        <div class="explanation">
+            <strong>Select by Class Name</strong> – Use <code>document.getElementsByClassName('item')</code> to select all three paragraphs below and change their <code>style.fontSize</code> to <code>'20px'</code>.
+        </div>
+        <p class="item">Item 1</p>
+        <p class="item">Item 2</p>
+        <p class="item">Item 3</p>
+
+        <div class="explanation">
+            <strong>Select by Tag Name</strong> – Use <code>document.getElementsByTagName('p')</code> to select all <code>&lt;p&gt;</code> elements and change their <code>style.color</code> to <code>'red'</code>.
+        </div>
+
+        <div class="explanation">
+            <strong>Select by Query Selector</strong> – Use <code>document.querySelector('.highlight')</code> to select the <em>first</em> highlighted paragraph and set its <code>style.border</code> to <code>'1px solid black'</code>. Then use <code>document.querySelector('.container p')</code> to select the first paragraph inside the container and set its <code>style.fontStyle</code> to <code>'italic'</code>.
+        </div>
+        <p class="highlight">Highlight 1</p>
+        <p class="highlight">Highlight 2</p>
+
+        <div class="explanation">
+            <strong>Select by Query Selector All</strong> – Use <code>document.querySelectorAll('.highlight')</code> to select all highlighted paragraphs and set each one's <code>style.margin</code> to <code>'10px'</code>. Then use <code>document.querySelectorAll('.container p')</code> to select all paragraphs inside the container and set their <code>style.textAlign</code> to <code>'center'</code>.
+        </div>
+        <aside class="container">
+            <p>Container 1</p>
+            <p>Container 2</p>
+            <p>Container 3</p>
+        </aside>
+    </section>
+
+    <!-- Exercise 2: Modifying Element Properties -->
+    <section>
+        <h2>Exercise 2: Modifying Element Properties</h2>
+
+        <div class="explanation">
+            <strong>innerHTML / innerText / textContent</strong> – Select the <code>#content</code> div below and experiment with setting its <code>innerHTML</code>, <code>innerText</code>, and <code>textContent</code> properties to <code>'&lt;strong&gt;Hello, World!&lt;/strong&gt;'</code>. Notice how each property handles HTML tags differently.
+        </div>
+        <div id="content">Content</div>
+
+        <div class="explanation">
+            <strong>Change Attribute</strong> – Select the link below with <code>document.getElementById('link')</code> and use <code>setAttribute('href', 'https://www.example.com')</code> to update its destination.
+        </div>
+        <a id="link" href="#">Link</a>
+
+        <div class="explanation">
+            <strong>Change Style</strong> – Select <code>#box</code> below and set its <code>style.width</code> to <code>'100px'</code>, <code>style.height</code> to <code>'100px'</code>, and <code>style.backgroundColor</code> to <code>'green'</code>.
+        </div>
+        <div id="box">Box</div>
+
+        <div class="explanation">
+            <strong>Add / Remove / Toggle Class</strong> – Select <code>#myElement</code> below and use <code>classList.add('active')</code> to add a class, <code>classList.remove('active')</code> to remove it, and <code>classList.toggle('active')</code> to toggle it.
+        </div>
+        <div id="myElement">My Element</div>
+    </section>
+
+    <!-- Exercise 3: Creating and Appending Elements -->
+    <section>
+        <h2>Exercise 3: Creating and Appending Elements</h2>
+
+        <div class="explanation">
+            <strong>Create Element</strong> – Use <code>document.createElement('div')</code> to create a new element and set its <code>textContent</code> to <code>'New Element'</code>.
+        </div>
+        <div class="explanation">
+            <strong>Append Element</strong> – Use <code>document.getElementById('container').appendChild(newElement)</code> to append the new element inside the container below.
+        </div>
+        <div id="container" style="border: 1px dashed #aaa; min-height: 40px; padding: 8px;">(Newly created elements will appear here)</div>
+    </section>
 
     <script src="script.js"></script>
 </body>

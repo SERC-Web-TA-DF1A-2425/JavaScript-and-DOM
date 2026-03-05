@@ -4,16 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Handlers Exercises</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 20px auto; padding: 0 20px; }
+        section { border: 1px solid #ccc; border-radius: 6px; padding: 16px; margin-bottom: 24px; }
+        section h2 { margin-top: 0; }
+        .explanation { background: #f0f4ff; border-left: 4px solid #4a6cf7; padding: 10px 14px; margin-bottom: 12px; border-radius: 0 4px 4px 0; }
+        #hoverDiv { display: inline-block; padding: 10px 20px; background: lightgray; cursor: pointer; }
+        #myImage { display: block; width: 200px; height: 150px; object-fit: cover; background: #eee; margin-top: 8px; }
+    </style>
 </head>
 <body>
-    <button id="myButton">Click Me</button>
-    <div id="message">Message</div>
-    <div id="hoverDiv">Hover over me</div>
-    <button id="toggleButton">Toggle Text</button>
-    <div id="toggleMessage">Hello</div>
-    <button id="changeImageButton">Change Image</button>
-    <img id="myImage" src="initial-image-url.jpg" alt="Image">
-    
+    <h1>Exercise 2 – Event Handlers</h1>
+    <p>Open <code>script.js</code> in your editor and follow the instructions in each section below. Reload the page to see your changes take effect.</p>
+
+    <!-- Exercise 1: Inline Event Handlers -->
+    <section>
+        <h2>Exercise 1: Inline Event Handlers</h2>
+
+        <div class="explanation">
+            <strong>Click Event (inline)</strong> – Add an <code>onclick</code> attribute directly to the button below so that clicking it changes the text of <code>#message</code> to <code>'Button Clicked!'</code>.<br>
+            Example: <code>&lt;button onclick="document.getElementById('message').innerText = 'Button Clicked!'"&gt;</code>
+        </div>
+        <!-- TODO: add onclick="..." to this button -->
+        <button id="myButton">Click Me</button>
+        <div id="message">Message</div>
+
+        <div class="explanation" style="margin-top: 16px;">
+            <strong>Mouse Over Event (inline)</strong> – Add an <code>onmouseover</code> attribute to the div below so that hovering over it changes its background color to yellow.<br>
+            Example: <code>&lt;div onmouseover="this.style.backgroundColor = 'yellow'"&gt;</code>
+        </div>
+        <!-- TODO: add onmouseover="..." to this div -->
+        <div id="hoverDiv">Hover over me</div>
+    </section>
+
+    <!-- Exercise 2: Declared Event Handlers -->
+    <section>
+        <h2>Exercise 2: Declared Event Handlers</h2>
+
+        <div class="explanation">
+            <strong>Click Event</strong> – In <code>script.js</code>, use <code>addEventListener('click', ...)</code> on <code>#myButton</code> to update <code>#message</code> when the button above is clicked.
+        </div>
+
+        <div class="explanation">
+            <strong>Mouse Over &amp; Mouse Out Events</strong> – In <code>script.js</code>, add <code>mouseover</code> and <code>mouseout</code> listeners to <code>#hoverDiv</code> to change its background color to yellow on hover and restore it when the mouse leaves.
+        </div>
+    </section>
+
+    <!-- Challenge Tasks -->
+    <section>
+        <h2>Challenge Tasks</h2>
+
+        <div class="explanation">
+            <strong>Toggle Text</strong> – In <code>script.js</code>, add a click listener to <code>#toggleButton</code> so that each click alternates the text of <code>#toggleMessage</code> between <code>'Hello'</code> and <code>'Goodbye'</code>.
+        </div>
+        <button id="toggleButton">Toggle Text</button>
+        <div id="toggleMessage">Hello</div>
+
+        <div class="explanation" style="margin-top: 16px;">
+            <strong>Change Image Source</strong> – In <code>script.js</code>, add a click listener to <code>#changeImageButton</code> that updates the <code>src</code> attribute of <code>#myImage</code> to a different image URL.
+        </div>
+        <button id="changeImageButton">Change Image</button>
+        <img id="myImage" src="https://placehold.co/200x150?text=Before" alt="Image">
+    </section>
+
     <script src="script.js"></script>
 </body>
 </html>
