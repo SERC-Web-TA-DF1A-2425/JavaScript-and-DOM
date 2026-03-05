@@ -1,6 +1,38 @@
 # Exercise 3 - Form Validation
 
-Series of exercises to practice form validation.
+## What is Form Validation?
+
+**Form validation** is the process of checking that a user's input meets certain rules before it is sent to a server (or acted upon). It protects data quality and gives users immediate, helpful feedback when they make a mistake.
+
+### Client-side vs. Server-side validation
+
+| | Client-side (browser) | Server-side (back end) |
+|---|---|---|
+| **Where** | JavaScript in the browser | Code on the web server |
+| **Speed** | Instant feedback | Requires a network round-trip |
+| **Security** | Can be bypassed | Cannot be bypassed |
+| **Use for** | User experience / UX | Trust & security |
+
+> **Important:** Client-side validation improves the user experience, but it must *always* be backed up by server-side validation. A user can disable JavaScript or tamper with network requests, so never rely solely on the browser for security.
+
+### Common validation rules
+
+- **Required fields** – the field must not be empty.
+- **Format checks** – the value must match a pattern (e.g. a valid email address or phone number).
+- **Length limits** – the value must be within a minimum/maximum number of characters.
+- **Matching fields** – two fields must contain the same value (e.g. password confirmation).
+
+### Using regular expressions for format checks
+
+A **regular expression** (regex) is a pattern used to test whether a string matches a specific format.
+
+```javascript
+let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+emailPattern.test('user@example.com'); // true
+emailPattern.test('not-an-email');     // false
+```
+
+---
 
 ## Setup
 

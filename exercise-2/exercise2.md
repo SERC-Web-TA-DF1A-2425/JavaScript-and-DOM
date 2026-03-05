@@ -1,6 +1,45 @@
 # Exercise 2 - Event Handlers
 
-Series of exercises to practice basic event handlers.
+## What are Event Handlers?
+
+Browsers constantly emit **events** – signals that something has happened, such as a user clicking a button, moving the mouse, pressing a key, or a page finishing loading. **Event handlers** (also called event listeners) are JavaScript functions that run in response to these signals.
+
+### Why use event handlers?
+
+Without event handlers, a web page is static – it looks the same no matter what the user does. Event handlers are what make pages *interactive*: a button that shows a menu, a form that validates input as you type, an image gallery that changes pictures on click.
+
+### Two ways to attach an event handler
+
+**1. Inline (in the HTML)**  
+The handler is written directly as an HTML attribute. This is quick but mixes HTML and JavaScript, which makes code harder to maintain.
+
+```html
+<button onclick="alert('Clicked!')">Click me</button>
+```
+
+**2. Declared (in JavaScript with `addEventListener`)**  
+The handler is registered from JavaScript. This keeps HTML and JS separate and allows multiple listeners on the same event.
+
+```javascript
+document.getElementById('myButton').addEventListener('click', function() {
+    alert('Clicked!');
+});
+```
+
+> **Best practice:** Prefer `addEventListener` for real projects. Inline handlers are shown here for learning purposes only.
+
+### Common event types
+
+| Event | Fires when… |
+|-------|-------------|
+| `click` | The user clicks an element |
+| `mouseover` | The mouse pointer moves onto an element |
+| `mouseout` | The mouse pointer moves off an element |
+| `input` | The value of an input field changes |
+| `submit` | A form is submitted |
+| `keydown` | A key is pressed |
+
+---
 
 ## Setup
 
