@@ -4,24 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Validation Exercises</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 20px auto; padding: 0 20px; }
+        section { border: 1px solid #ccc; border-radius: 6px; padding: 16px; margin-bottom: 24px; }
+        section h2 { margin-top: 0; }
+        .explanation { background: #f0f4ff; border-left: 4px solid #4a6cf7; padding: 10px 14px; margin-bottom: 12px; border-radius: 0 4px 4px 0; }
+        label { display: inline-block; width: 160px; }
+        input { margin-bottom: 12px; padding: 4px 8px; }
+        #emailFeedback { font-size: 0.9em; margin-left: 8px; }
+    </style>
 </head>
 <body>
-    <form id="myForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name"><br><br>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
-        <span id="emailFeedback"></span><br><br>
-        
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password"><br><br>
-        
-        <label for="confirmPassword">Confirm Password:</label>
-        <input type="password" id="confirmPassword" name="confirmPassword"><br><br>
-        
-        <button type="submit">Submit</button>
-    </form>
+    <h1>Exercise 3 – Form Validation</h1>
+    <p>Open <code>script.js</code> in your editor and follow the instructions in each section below. Try submitting the form with different inputs to test your validation logic.</p>
+
+    <!-- Exercise 1: Basic Form Validation -->
+    <section>
+        <h2>Exercise 1: Basic Form Validation</h2>
+
+        <div class="explanation">
+            <strong>Required Fields</strong> – In <code>script.js</code>, listen for the form's <code>submit</code> event. If the <em>Name</em> or <em>Email</em> field is empty, call <code>event.preventDefault()</code> to stop submission and show an alert.
+        </div>
+
+        <div class="explanation">
+            <strong>Email Format</strong> – Extend your validation to check that the email field contains a valid email address using a regular expression: <code>/^[^\s@]+@[^\s@]+\.[^\s@]+$/</code>
+        </div>
+
+        <form id="myForm">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Required">
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Required – must be valid">
+                <span id="emailFeedback"></span>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Choose a password">
+            </div>
+            <div>
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Repeat your password">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- Challenge Tasks -->
+    <section>
+        <h2>Challenge Tasks</h2>
+
+        <div class="explanation">
+            <strong>Password Confirmation</strong> – Add validation to ensure the <em>Password</em> and <em>Confirm Password</em> fields match before the form is submitted.
+        </div>
+
+        <div class="explanation">
+            <strong>Real-time Email Validation</strong> – In <code>script.js</code>, add an <code>input</code> event listener on the <em>Email</em> field. As the user types, display feedback in <code>#emailFeedback</code>: set its text to <code>'Valid email address.'</code> (green) or <code>'Invalid email address.'</code> (red) based on the regex test.
+        </div>
+    </section>
+
     <script src="script.js"></script>
 </body>
 </html>
